@@ -17,9 +17,7 @@ describe( 'Swag Labs Saucedemo Test', {testIsolation :false }, ()=> {
     cy.wait(2000);
     cy.url().should('include', '/inventory');
 
-  });
-  
-  it('Agregar productos al carrito', () => {
+
     // Agregar productos al carrito
     cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
     cy.get('[data-test="add-to-cart-sauce-labs-bike-light"]').click();
@@ -28,9 +26,7 @@ describe( 'Swag Labs Saucedemo Test', {testIsolation :false }, ()=> {
     cy.get('.shopping_cart_badge').should('have.text', '2');
 
     cy.wait(2000); 
-  });
 
-  it('Completa checkout and logout with standard_user', () => {
    
     // Ir al carrito y proceder al checkout
     cy.get('[data-test="shopping-cart-link"]').click();
