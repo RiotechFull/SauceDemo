@@ -56,7 +56,8 @@ describe( 'Swag Labs Saucedemo Test', {testIsolation :false }, ()=> {
   });
 
   // with problem_user
-  it.only('Should complete checkout and logout with problem_user', () => {
+  it('Should complete checkout and logout with problem_user', () => {
+  //it.only('Should complete checkout and logout with problem_user', () => {
     // Iniciar sesión con problem_user
     cy.visit('https://www.saucedemo.com/');
     cy.get('#user-name').type('problem_user');
