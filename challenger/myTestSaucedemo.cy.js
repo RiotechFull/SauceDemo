@@ -7,10 +7,11 @@ describe( 'Swag Labs Saucedemo Test', {testIsolation :false }, ()=> {
 
   it ('Login correcto con credencialesválidas de Standard_user', () => {
     // Visitar la URL
-    cy.visit('https://www.saucedemo.com/');
-    cy.get('#user-name').type('standard_user');
-    cy.get('#password').type('secret_sauce');
-    cy.get('#login-button').click();
+    const user = 'standard_user';
+    const password = 'secret_sauce';
+    cy.login(user, password);
+
+    cy.wait(2000)
 
     // Verificar que se ha iniciado sesión correctamente
     cy.wait(2000);
@@ -59,10 +60,11 @@ describe( 'Swag Labs Saucedemo Test', {testIsolation :false }, ()=> {
   it('Should complete checkout and logout with problem_user', () => {
   //it.only('Should complete checkout and logout with problem_user', () => {
     // Iniciar sesión con problem_user
-    cy.visit('https://www.saucedemo.com/');
-    cy.get('#user-name').type('problem_user');
-    cy.get('#password').type('secret_sauce');
-    cy.get('#login-button').click();
+    const user = 'problem_user';
+    const password = 'secret_sauce';
+    cy.login(user, password);
+    cy.wait(2000)
+
 
     // Agregar productos al carrito
     cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click();
