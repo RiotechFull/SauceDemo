@@ -1,8 +1,9 @@
 describe( 'Swag Labs Saucedemo Test', {testIsolation :false }, ()=> {
   
-  beforeEach(() => {
-  //  cy.clearCookies();
-  });
+  beforeEach ('should visit the page', () => {
+   //  cy.clearCookies();   no es util por el momento ya que blanquea los siguientes it
+    //cy.log('Puchuflito')
+});
 
   it ('Login correcto con credencialesválidas de Standard_user', () => {
     // Visitar la URL
