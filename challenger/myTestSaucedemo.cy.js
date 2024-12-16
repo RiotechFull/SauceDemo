@@ -1,7 +1,7 @@
 describe( 'Swag Labs Saucedemo Test', {testIsolation :false }, ()=> {
   
   beforeEach ('should visit the page', () => {
-   //  cy.clearCookies();   no es util por el momento ya que blanquea los siguientes it
+   //  cy.clearCookies();   no es util por el momento ya que blanquea los siguientes it 
     //cy.log('Puchuflito')
 });
 
@@ -55,7 +55,8 @@ describe( 'Swag Labs Saucedemo Test', {testIsolation :false }, ()=> {
     cy.url().should('include', '/');
   });
 
-  it('Should complete checkout and logout with problem_user', () => {
+  // with problem_user
+  it.only('Should complete checkout and logout with problem_user', () => {
     // Iniciar sesión con problem_user
     cy.visit('https://www.saucedemo.com/');
     cy.get('#user-name').type('problem_user');
